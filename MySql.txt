@@ -1,0 +1,25 @@
+create database java;
+use java
+create table class(
+    -> studentid varchar(20),
+    -> firstname varchar(10),
+    -> lastname varchar
+);
+insert into class(studentid,firstname,lastname,courseid)
+ -> values(15,'Harish','Logu',10);
+-> values(15,'Hem','Hems',11);
+-> values(21,'Alwin','Rex',04);
+-> values(04,'Karthi','Keyan',21);          (insert one by one)
+select* from class
+
+
+
+Output:
++-----------+-----------+----------+----------+
+| studentid | firstname | lastname | courseid |
++-----------+-----------+----------+----------+
+|        15 | Harish    | Logu     |       10 |
+|        11 | Hem       | Hems     |       11 |
+|        21 | Alwin     | Rex      |        4 |
+|         4 | Karthi    | Keyan    |       21 |
++-----------+-----------+----------+----------+
