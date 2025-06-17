@@ -1,0 +1,37 @@
+ alter table addon
+    -> add Fess int;
+select* from addon;
++-----------+-----------+----------+-------+-------+------+
+| studentid | firstname | lastname | grade | total | Fess |
++-----------+-----------+----------+-------+-------+------+
+|         1 | Alwin     | Rex      | A     |   390 | NULL |
+|         2 | Harish    | LT       | B     |   450 | NULL |
+|         3 | Hemnsth   | S        | B     |   429 | NULL |
+|         4 | Karthi    | Keyan    | A     |   419 | NULL |
+|         5 | Nisanth   | S        | B     |   370 | NULL |
++-----------+-----------+----------+-------+-------+------+
+ update addon
+    -> set fess= 20000
+    -> where studentid =1;
+ update addon
+    -> set fess=30000
+    -> where studentid =2;
+ update addon
+    -> set fess =25000
+    -> where studentid=3;
+ update addon
+    -> set fess=35000
+    -> where studentid=4;
+ update addon
+    -> set fess=33000
+    -> where studentid=5;
+ select* from addon;
++-----------+-----------+----------+-------+-------+-------+
+| studentid | firstname | lastname | grade | total | Fess  |
++-----------+-----------+----------+-------+-------+-------+
+|         1 | Alwin     | Rex      | A     |   390 | 20000 |
+|         2 | Harish    | LT       | B     |   450 | 30000 |
+|         3 | Hemnsth   | S        | B     |   429 | 25000 |
+|         4 | Karthi    | Keyan    | A     |   419 | 35000 |
+|         5 | Nisanth   | S        | B     |   370 | 33000 |
++-----------+-----------+----------+-------+-------+-------+
