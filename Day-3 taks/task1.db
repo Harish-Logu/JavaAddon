@@ -1,0 +1,25 @@
+ create table addon(
+    -> studentid int primary key,
+    -> firstname varchar(30),
+    -> lastname varchar(30),
+    -> grade char(20),
+    -> total int
+    -> );
+
+ insert into addon(studentid,firstname,lastname,grade,total)values
+    -> (1,'Alwin','Rex','A',390),
+    -> (2,'Harish','LT','B',450),
+    -> (3,'Hemnsth','S','B',429),
+    -> (4,'Karthi','Keyan','A',419),
+    -> (5,'Nisanth','S','B',370)
+    -> ;
+select* from addon where total> 320;
++-----------+-----------+----------+-------+-------+
+| studentid | firstname | lastname | grade | total |
++-----------+-----------+----------+-------+-------+
+|         1 | Alwin     | Rex      | A     |   390 |
+|         2 | Harish    | LT       | B     |   450 |
+|         3 | Hemnsth   | S        | B     |   429 |
+|         4 | Karthi    | Keyan    | A     |   419 |
+|         5 | Nisanth   | S        | B     |   370 |
++-----------+-----------+----------+-------+-------+
