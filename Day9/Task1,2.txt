@@ -1,0 +1,129 @@
+ insert into students(studentid,firstname,lastname,grade,total)values
+    -> (1,'Harish','Logu','A++',80),
+    -> (2,'Hem','S','A++',100),
+    -> (3,'Karthi','Keyan','A++',110),
+    -> (4,'Alwin','Rex','A++',120);
+
+ select* from students;
++-----------+-----------+----------+-------+-------+
+| studentid | firstname | lastname | grade | total |
++-----------+-----------+----------+-------+-------+
+|         1 | Harish    | Logu     | A++   |    80 |
+|         2 | Hem       | S        | A++   |   100 |
+|         3 | Karthi    | Keyan    | A++   |   110 |
+|         4 | Alwin     | Rex      | A++   |   120 |
++-----------+-----------+----------+-------+-------+
+
+
+ select* from students where total>80;
++-----------+-----------+----------+-------+-------+
+| studentid | firstname | lastname | grade | total |
++-----------+-----------+----------+-------+-------+
+|         2 | Hem       | S        | A++   |   100 |
+|         3 | Karthi    | Keyan    | A++   |   110 |
+|         4 | Alwin     | Rex      | A++   |   120 |
++-----------+-----------+----------+-------+-------+
+
+alter table students
+    -> add fees int;
+
+
+ select* from students;
++-----------+-----------+----------+-------+-------+------+
+| studentid | firstname | lastname | grade | total | fees |
++-----------+-----------+----------+-------+-------+------+
+|         1 | Harish    | Logu     | A++   |    80 | NULL |
+|         2 | Hem       | S        | A++   |   100 | NULL |
+|         3 | Karthi    | Keyan    | A++   |   110 | NULL |
+|         4 | Alwin     | Rex      | A++   |   120 | NULL |
++-----------+-----------+----------+-------+-------+------+
+
+update students
+    -> set fees=10000
+    -> where studentid=1;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from students;
++-----------+-----------+----------+-------+-------+-------+
+| studentid | firstname | lastname | grade | total | fees  |
++-----------+-----------+----------+-------+-------+-------+
+|         1 | Harish    | Logu     | A++   |    80 | 10000 |
+|         2 | Hem       | S        | A++   |   100 |  NULL |
+|         3 | Karthi    | Keyan    | A++   |   110 |  NULL |
+|         4 | Alwin     | Rex      | A++   |   120 |  NULL |
++-----------+-----------+----------+-------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> update students
+    -> set fees=10000
+    -> where studentid=2,3,4;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',3,4' at line 3
+mysql> update students
+    -> set fees=10000
+    -> where studentid=2
+    -> ;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students
+    -> set fees=10000
+    -> where studentid=3;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students
+    -> set fees=10000
+    -> where studentid=4;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from students;
++-----------+-----------+----------+-------+-------+-------+
+| studentid | firstname | lastname | grade | total | fees  |
++-----------+-----------+----------+-------+-------+-------+
+|         1 | Harish    | Logu     | A++   |    80 | 10000 |
+|         2 | Hem       | S        | A++   |   100 | 10000 |
+|         3 | Karthi    | Keyan    | A++   |   110 | 10000 |
+|         4 | Alwin     | Rex      | A++   |   120 | 10000 |
++-----------+-----------+----------+-------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> update students
+    -> set fees=20000
+    -> where studentid=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students
+    -> set fees=2000
+    -> where studentid=3;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students
+    -> set fees=30000
+    -> where studentid=4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from students;
++-----------+-----------+----------+-------+-------+-------+
+| studentid | firstname | lastname | grade | total | fees  |
++-----------+-----------+----------+-------+-------+-------+
+|         1 | Harish    | Logu     | A++   |    80 | 10000 |
+|         2 | Hem       | S        | A++   |   100 | 20000 |
+|         3 | Karthi    | Keyan    | A++   |   110 |  2000 |
+|         4 | Alwin     | Rex      | A++   |   120 | 30000 |
++-----------+-----------+----------+-------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select* from students order by fees asc;
++-----------+-----------+----------+-------+-------+-------+
+| studentid | firstname | lastname | grade | total | fees  |
++-----------+-----------+----------+-------+-------+-------+
+|         3 | Karthi    | Keyan    | A++   |   110 |  2000 |
+|         1 | Harish    | Logu     | A++   |    80 | 10000 |
+|         2 | Hem       | S        | A++   |   100 | 20000 |
+|         4 | Alwin     | Rex      | A++   |   120 | 30000 |
++-----------+-----------+----------+-------+-------+-------+
