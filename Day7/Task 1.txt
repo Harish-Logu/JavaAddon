@@ -1,0 +1,29 @@
+ create table student(
+    -> studname varchar(50),
+    -> studrollno int,
+    -> studemail varchar(40),
+    -> studphno int,
+    -> studdept varchar(40)
+    -> );
+ insert into student(studname, studrollno, studemail, studphno, studdept)
+    -> values('Karthik', 103724, 'karthik123@gmail.com', 9942431541, 'CT');
+ insert into student(studname, studrollno, studemail, studphno, studdept)
+    -> values('Robert', 103725, 'Robert413@gmail.com',1234876590, 'CT');
+ insert into student(studname, studrollno, studemail, studphno, studdept)
+    -> values('Anirudha', 103726, 'ani567@gmail.com',994241324, 'CT');
+insert into student(studname, studrollno, studemail, studphno, studdept)
+    -> values('Abi', 103728, 'abi1611@gmail.com',1239874560, 'CT');
+ insert into student(studname, studrollno, studemail, studphno, studdept)
+    -> values('Sam', 103729, 'sam1037@gmail.com',1445167892, 'CT');
+
+Output:
+
++----------+------------+----------------------+------------+----------+
+| studname | studrollno | studemail            | studphno   | studdept |
++----------+------------+----------------------+------------+----------+
+| Karthik  |     103724 | karthik123@gmail.com | 1234567891 | CT       |
+| Robert   |     103725 | Robert413@gmail.com  | 1234876590 | CT       |
+| Anirudha |     103726 | ani567@gmail.com     |  994241324 | CT       |
+| Abi      |     103728 | abi1611@gmail.com    | 1239874560 | CT       |
+| Sam      |     103729 | sam1037@gmail.com    | 1445167892 | CT       |
++----------+------------+----------------------+------------+----------+
