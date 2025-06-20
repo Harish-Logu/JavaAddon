@@ -9,5 +9,5 @@ Write a Sub-query to find top performer?
 +----------+------------+----------------------+---------------------+---------+-------+
 | studname | studrollno | studemail            | course              | subject | marks |
 +----------+------------+----------------------+---------------------+---------+-------+
-| Hari  |     103723 | harishlogu74@gmail.com  | Computer Technology | SSOS    |    90 |
+| Hari     |     103723 |harishlogu74@gmail.com| Computer Technology | SSOS    |    90 |
 +----------+------------+----------------------+---------------------+---------+-------+
