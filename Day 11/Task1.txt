@@ -1,0 +1,39 @@
+Write a query to Join Students and Marks?
+
+ select* from Students;
++------------+----------+----------------------+------------+----------+---------------------+
+| studrollno | studname | studemail            | studphno   | studdept | course              |
++------------+----------+----------------------+------------+----------+---------------------+
+|     103723 | Karthik  | karthik123@gmail.com | 1234567891 | CT       | Computer Technology |
+|     103725 | Robert   | Robert413@gmail.com  | 1234876590 | CT       | Computer Technology |
+|     103726 | Anirudha | ani567@gmail.com     | 994241324  | CT       | Computer Technology |
+|     103728 | Abi      | abi1611@gmail.com    | 1239874560 | CT       | Computer Technology |
+|     103729 | Sam      | sam1037@gmail.com    | 1445167892 | CT       | Computer Technology |
++------------+----------+----------------------+------------+----------+---------------------+
+
+
+ select* from Marks;
++------------+---------+-------+
+| studrollno | subject | marks |
++------------+---------+-------+
+|     103723 | Tamil   |    90 |
+|     103725 | Tamil   |    79 |
+|     103726 | Tamil   |    75 |
+|     103728 | Tamil   |    70 |
+|     103729 | Tamil   |    65 |
++------------+---------+-------+
+
+
+ select s.studrollno,s.studname,s.studemail,s.studphno,s.studdept,s.course,m.subject,m.marks
+    -> from Students s
+    -> join marks m
+    -> on s.studrollno = m.studrollno;
++------------+----------+----------------------+------------+----------+---------------------+---------+-------+
+| studrollno | studname | studemail            | studphno   | studdept | course              | subject | marks |
++------------+----------+----------------------+------------+----------+---------------------+---------+-------+
+|     103723 | Karthik  | karthik123@gmail.com | 1234567891 | CT       | Computer Technology | Tamil   |    90 |
+|     103725 | Robert   | Robert413@gmail.com  | 1234876590 | CT       | Computer Technology | Tamil   |    79 |
+|     103726 | Anirudha | ani567@gmail.com     | 994241324  | CT       | Computer Technology | Tamil   |    75 |
+|     103728 | Abi      | abi1611@gmail.com    | 1239874560 | CT       | Computer Technology | Tamil   |    70 |
+|     103729 | Sam      | sam1037@gmail.com    | 1445167892 | CT       | Computer Technology | Tamil   |    65 |
++------------+----------+----------------------+------------+----------+---------------------+---------+-------+
